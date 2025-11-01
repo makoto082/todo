@@ -7,6 +7,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
 public class Todo {
@@ -15,7 +17,9 @@ public class Todo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "title", nullable = false, length = 50)
+	@Column(name = "title", nullable = false, length = 200)
+	@NotBlank
+	@Size(max = 200)
     private String title;
 	
 	private boolean done = false;

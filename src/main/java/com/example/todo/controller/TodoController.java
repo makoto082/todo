@@ -38,7 +38,7 @@ public class TodoController {
 		return repo.save(t);
 	}
 	
-	@PatchMapping
+	@PatchMapping("/{id}/done")
 	public Todo done(@PathVariable Long id) {
 		Todo t = repo.findById(id).orElseThrow();
 		t.setDone(true);
