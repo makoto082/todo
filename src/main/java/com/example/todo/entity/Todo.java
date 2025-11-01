@@ -15,7 +15,7 @@ public class Todo {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(name = "todo", nullable = false, length = 50)
+	@Column(name = "title", nullable = false, length = 50)
     private String title;
 	
 	private boolean done = false;
